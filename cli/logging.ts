@@ -30,7 +30,7 @@ export function handleError(error: RollupError, recover = false): void {
 	}
 
 	if (error.stack) {
-		stderr(dim(error.stack));
+		stderr(dim(error.stack.replace(`${name}: ${error.message}\n`, '')));
 	}
 
 	stderr('');
