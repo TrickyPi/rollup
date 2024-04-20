@@ -62,7 +62,7 @@ jobs:
       - name: Install dependencies
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm ci --ignore-scripts
-      - name: Build artefacts
+      - name: Build artefacts 123
         run: npm exec -- concurrently -c green,blue 'npm:build:napi -- --release' 'npm:build:cjs' && npm run build:copy-native && ${{env.BUILD_BOOTSTRAP_CJS}} && npm run build:copy-native
       - name: Upload artifact
         uses: actions/upload-artifact@v4
